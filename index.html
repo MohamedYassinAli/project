@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <style>
+        body{
+            background-color: rgb(180, 156, 121);
+            font-size: 27px;
+            justify-content: center;
+        }
+        #next{
+            height: 71px;
+            width: 29%;
+            border-radius: 9px;
+            font-size: 31px;
+            margin-left: 23px;
+            margin-top: 5px;
+            padding: 11px;
+            
+    
+        
+        </style>
+    <div id="userStory">
+      <h1 id="title">
+</h1>
+<p>
+user story :
+the image  carousel Carousels allow multiple pieces of content to occupy a single, coveted space. This may placate corporate infighting, but on large or small viewports, people often scroll past carousels. A static hero or integrating content in the UI may be better solutions. But if a carousel is your hero, good navigation and content can help make it effective.
+</p>
+</div>
+
+<div >
+<img id="image" style="width:450px;height:450px; border-radius: 4px; padding: 5px; display: flex;
+justify-content: space-between;"></img>
+<div id="next">
+    <button id="next">previous </button>
+<button id="next">next</button>
+</div>
+</div>
+
+
+    <script> var pictures;
+
+
+        let element_title = document.getElementById('title');
+        element_title.innerText = 'Project: Build an image carousel';
+        
+        pictures = ['https://www.ncsc.gov.uk/images/social-icons.jpg?mpwidth=545&mlwidth=737&twidth=961&dwidth=635&dpr=1&width=1920', 'https://www.07heavenmarketing.co.uk/hubfs/What%20Is%20The%20Best%20Content%20For%20Each%20Social%20Media%20Platform%20featured.jpg', 'https://blog.voceligado.com.br/wp-content/uploads/2023/02/5-tipos-de-negocios-que-precisam-de-Social-Media.jpg', 'https://blog.voceligado.com.br/wp-content/uploads/2023/06/o-que-e-um-social-media.jpg'];
+        let element_image = document.getElementById('image');
+        element_image.setAttribute("src", pictures[0]);
+        element_image.style.backgroundColor = '#000000';
+        
+        
+        document.getElementById('next').addEventListener('click', (event) => {
+          pictures.unshift(pictures.pop());
+          let element_image2 = document.getElementById('image');
+          element_image2.setAttribute("src", pictures[0]);
+        
+        });
+        
+        document.getElementById('prev').addEventListener('click', (event) => {
+          pictures.unshift(pictures.shift());
+          pictures.pop();
+          let element_image3 = document.getElementById('image');
+          element_image3.setAttribute("src", pictures.slice(-1)[0]);
+        
+        });</script>
+  </body>
+</html>
